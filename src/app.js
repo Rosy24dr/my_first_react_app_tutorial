@@ -2,8 +2,17 @@ import React from "react";
 import { useEffect } from "react";
 import "./App.css";
 import SearchIcon from "./search.svg";
+import MovieCard from "./MovieCard";
 
 const API_URL = "http://www.omdbapi.com?apikey=c291179f";
+
+const movie1 = {
+  Title: "Amazing Spiderman Syndrome",
+  Year: "2012",
+  imdbID: "tt2586634",
+  Type: "movie",
+  Poster: "N/A",
+};
 
 const App = () => {
   const searchMovies = async (title) => {
@@ -26,7 +35,11 @@ const App = () => {
           value="Superman"
           onChange={() => {}}
         />
-        <img src={SearchIcon} alt="search" />
+        <img src={SearchIcon} alt="search" onClick={() => {}} />
+      </div>
+
+      <div className="container">
+        <MovieCard movie1={movie1}/>
       </div>
     </div>
   );
